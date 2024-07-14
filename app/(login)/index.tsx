@@ -4,6 +4,8 @@ import React from "react";
 const Splash = () => {
   let backgroundColor = "#2A7C76";
 
+
+
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <Image

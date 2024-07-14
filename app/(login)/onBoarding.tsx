@@ -1,4 +1,5 @@
-import { Link } from "expo-router";
+import LoginArrowSvg from "@/assets/SVG/LoginArrowSvg";
+import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import {
   StyleSheet,
@@ -8,15 +9,33 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import { Icon } from "react-native-vector-icons/Icon";
+import Svg, { Path } from "react-native-svg";
 
 const OnBoarding = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isPasswordVisible, setPasswordVisible] = useState(false);
+  const router = useRouter();
+
+  const SvgBackground = () => (
+    <Svg width="414" height="650" viewBox="0 0 414 677" fill="none">
+      <Path d="M0 0H414V677L0 618.919V0Z" fill="#EEF8F7" />
+    </Svg>
+  );
+
+
+  // Temp Navigate
+  const handleLogin = () => {
+    // login logic
+    router.push("/(tabs)/Home");
+  };
 
   return (
     <View style={styles.container}>
+      <View style={styles.svgWrapper}>
+        <SvgBackground />
+      </View>
       <View style={styles.topContainer}>
         <Image
           style={styles.logo2}
@@ -44,8 +63,11 @@ const OnBoarding = () => {
           <Link href="/splash" style={styles.forgot}>
             Forgot Password?
           </Link>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Log In</Text>
+            <View>
+              <LoginArrowSvg style={styles.arrow} />
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -65,6 +87,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  arrow:{
+    marginTop:-18,
+    marginLeft:80,
+  },
+
   logo2: {
     width: 182.57,
     marginLeft: 10,
@@ -86,10 +113,12 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     width: "100%",
     paddingHorizontal: 20,
+    paddingTop: 20,
   },
   bottomContainer: {
     flex: 1,
-    top: 60,
+    marginTop:270,
+    position:"static"
   },
   input: {
     height: 60,
@@ -105,6 +134,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     marginTop: 20,
     marginBottom: 20,
+    color:"#429690",
   },
   button: {
     backgroundColor: "#429690",
@@ -117,12 +147,15 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 10,
     paddingLeft: 20,
+    top: 30,
   },
   buttonText: {
     paddingTop: 8,
     color: "#fff",
     fontWeight: "700",
     fontSize: 18,
+    flexDirection: "row",
+    marginLeft:-40,
   },
 
   icon: {
@@ -133,5 +166,9 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "700",
     textAlign: "center",
+  },
+  svgWrapper: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: -1,
   },
 });
