@@ -10,6 +10,7 @@ import FilterSvg from "@/assets/SVG/FilterSvg";
 import OilSvg from "@/assets/SVG/OilSvg";
 import Map from "@/Components/MapDesign";
 import NotificationSvg from "@/assets/SVG/NotificationSvg";
+import LineChartComponent from "@/Components/LineChart";
 
 const HeaderTitle = () => {
   return (
@@ -70,7 +71,9 @@ const Home = () => {
         <Map />
 
         <RawDetails title="Spending" href="/Spending" setMarginLeft={220} />
-        <View style={styles.container1}></View>
+        <View style={styles.container1}>
+          <LineChartComponent heightChart={125}/>
+        </View>
 
         <RawDetails
           title="Upcoming Deadlines"

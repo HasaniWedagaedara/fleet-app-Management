@@ -17,6 +17,9 @@ import InvoiceList from "@/Components/InvoiceList";
 import OilSvg from "@/assets/SVG/OilSvg";
 import MotorSvg from "@/assets/SVG/MotorSvg";
 import { StackNavigationProp } from "@react-navigation/stack";
+import LineChartComponent from "@/Components/LineChart";
+
+
 
 const HeaderTitle = () => {
   return (
@@ -31,7 +34,9 @@ const HeaderTitle = () => {
 export type RootStackParamList = {
   Home: undefined;
 };
-const Spending = () => {
+
+
+const Spending= () => {
   const headerHeight = useHeaderHeight();
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
@@ -63,11 +68,16 @@ const Spending = () => {
         }}
       />
 
+
+
+
       <View style={[styles.container, { paddingTop: headerHeight }]}>
         <GestureHandlerRootView>
           <TabsBar />
         </GestureHandlerRootView>
-        <View></View>
+        <View style={[styles.chart, ]}>
+          <LineChartComponent heightChart={220}/>
+        </View>
         <View style={styles.titleRow}>
           <Row />
         </View>
@@ -103,6 +113,7 @@ const styles = StyleSheet.create({
   row1: {
     flexDirection: "row",
     alignItems: "center",
+    top:20,
   },
   txt: {
     flexDirection: "row",
@@ -129,6 +140,11 @@ const styles = StyleSheet.create({
   list: {
     marginTop: 20,
   },
+  chart:{
+    top:-100,
+    height:400,
+    marginLeft:10,
+  }
 });
 
 const Row = () => {
