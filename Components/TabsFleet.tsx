@@ -1,57 +1,96 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import { ScrollView } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import Drivers from "./DriversList";
+import Vehicles from "./VehiclesList";
+import OilSvg from "@/assets/SVG/OilSvg";
 
-const Category = [{ title: "Drivers" }, { title: "Vehicles" }];
 
 const TabsFleet = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState("Drivers");
 
-  const handleSelectCategory = (index: number) => {
-    setActiveIndex(index);
+  const handleClick = (tab: React.SetStateAction<string>) => {
+    setActiveTab(tab);
   };
 
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      {Category.map((item, index) => (
+    <View style={styles.wrapper}>
+      <View style={styles.container}>
         <TouchableOpacity
-          key={index}
-          onPress={() => handleSelectCategory(index)}
-          style={activeIndex === index ? styles.active : styles.item}
+          onPress={() => handleClick("Drivers")}
+          style={[
+            styles.tab,
+            {
+              backgroundColor: activeTab === "Drivers" ? "#29756F" : "#F4F6F6",
+            },
+          ]}
         >
-          <Text style={{ color: activeIndex === index ? "#fff" : "#666666" }}>
-            {item.title}
+          <Text style={{ color: activeTab === "Drivers" ? "#F4F6F6" : "#000" }}>
+            Drivers
           </Text>
         </TouchableOpacity>
-      ))}
-    </ScrollView>
+
+        <TouchableOpacity
+          onPress={() => handleClick("Vehicles")}
+          style={[
+            styles.tab,
+            {
+              backgroundColor: activeTab === "Vehicles" ? "#29756F" : "#F4F6F6",
+            },
+          ]}
+        >
+          <Text
+            style={{ color: activeTab === "Vehicles" ? "#F4F6F6" : "#000" }}
+          >
+            Vehicles
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.content}>
+        {activeTab === "Drivers" ? 
+        <Drivers   /> : 
+        <Vehicles  />}
+      </View>
+    </View>
   );
 };
 
 export default TabsFleet;
 
 const styles = StyleSheet.create({
-  item: {
-    flexDirection: "row",
-    backgroundColor: "#fff",
-    height: 40,
-    paddingHorizontal: 16,
-    borderRadius: 10,
-    marginLeft: 80,
-    marginTop: 200,
-    justifyContent: "center",
-    alignItems: "center",
+  wrapper: {
+    flex: 1,
+    backgroundColor: "#FFF",
   },
-  active: {
-    backgroundColor: "#429690",
+  container: {
     flexDirection: "row",
-    height: 40,
-    width: 90,
-    paddingHorizontal: 16,
-    borderRadius: 10,
-    marginLeft: 20,
-    marginTop: 50,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
+    backgroundColor: "#F4F6F6",
+    borderRadius: 40,
+    marginHorizontal: 25,
+  },
+  tab: {
+    height: 45,
+    width: 160,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 40,
+    marginHorizontal: 10,
+  },
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: -450,
+  },
+  listContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#e0e0e0",
+    borderRadius: 10,
   },
 });

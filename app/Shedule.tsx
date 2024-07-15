@@ -5,8 +5,6 @@ import { Stack } from "expo-router";
 import { useHeaderHeight } from "@react-navigation/elements";
 import SearchSvg from "@/assets/SVG/SearchSvg";
 import AddSvg from "@/assets/SVG/AddSvg";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import TabsFleet from "@/Components/TabsFleet";
 
 const HeaderTitle = () => {
   return (
@@ -15,20 +13,18 @@ const HeaderTitle = () => {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#429690",
-        height:200,
-        width:385,
-        position:'absolute',
-        marginLeft:-20,
+        height: 200,
+        width: 385,
+        position: "absolute",
+        marginLeft: -20,
       }}
     >
-      <Text style={styles.headerTitle}>Fleet</Text>
+      <Text style={styles.headerTitle}>Shedule</Text>
     </View>
   );
 };
 
-
-
-const Fleet = () => {
+const Schedule = () => {
   const headerHeight = useHeaderHeight();
 
   return (
@@ -48,37 +44,24 @@ const Fleet = () => {
             >
               <View style={styles.iconRow}>
                 <SearchSvg style={styles.search} />
-                <AddSvg style={styles.add}/>
+                <AddSvg style={styles.add} />
               </View>
             </TouchableOpacity>
           ),
         }}
       />
 
-
-        <View style={styles.container}>
-          <GestureHandlerRootView>
-            <TabsFleet/>
-          </GestureHandlerRootView>
-        </View>
-
-
+      
     </>
-    
   );
 };
 
-export default Fleet;
+export default Schedule;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    marginTop: 80,
-    padding: 10,
-    top: 50,
-    borderRadius: 30,
-    zIndex: 2,
+    backgroundColor: "#fff",
   },
   headerTitle: {
     fontSize: 18,
