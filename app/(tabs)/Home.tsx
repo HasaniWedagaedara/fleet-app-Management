@@ -1,4 +1,11 @@
-import { StyleSheet, TouchableOpacity, Image, View, Text } from "react-native";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  View,
+  Text,
+  Platform,
+} from "react-native";
 import React from "react";
 import { Stack } from "expo-router";
 import colors from "@/constants/colors";
@@ -15,7 +22,13 @@ import LineChartComponent from "@/Components/LineChart";
 const HeaderTitle = () => {
   return (
     <View style={{ alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ fontSize: 14, color: colors.primary, marginTop: 35 }}>
+      <Text
+        style={{
+          fontSize: 14,
+          color: colors.primary,
+          marginTop: 35,
+        }}
+      >
         Welcome!
       </Text>
       <Text style={{ fontSize: 20, color: "#29756F", marginLeft: -10 }}>
@@ -72,7 +85,7 @@ const Home = () => {
 
         <RawDetails title="Spending" href="/Spending" setMarginLeft={220} />
         <View style={styles.container1}>
-          <LineChartComponent heightChart={125}/>
+          <LineChartComponent heightChart={125} />
         </View>
 
         <RawDetails

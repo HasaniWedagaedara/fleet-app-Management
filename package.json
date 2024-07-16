@@ -15,12 +15,15 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.3",
     "@expo/vector-icons": "^14.0.2",
+    "@fontsource-variable/inter": "^5.0.19",
+    "@fontsource/inter": "^5.0.19",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.10.0",
     "@react-navigation/stack": "^6.4.0",
     "expo-constants": "~16.0.2",
-    "expo-font": "~12.0.7",
+    "expo-font": "~12.0.8",
     "expo-linear-gradient": "~13.0.2",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.17",

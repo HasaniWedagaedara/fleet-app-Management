@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import BlackArrow from "@/assets/SVG/BlackArrow";
 import VehiclesList from "@/data/Vehicles";
+import { router } from "expo-router";
 
 const Vehicles = () => {
   const [Vehicles, setVehicles] = useState(
@@ -19,6 +20,10 @@ const Vehicles = () => {
       return updatedVehicles;
     });
   };
+
+  const handleNavigate = ()=>{
+    router.push("/VehiclesView")
+  }
 
   return (
     <View style={[styles.container]}>
@@ -42,7 +47,7 @@ const Vehicles = () => {
                 <Text style={styles.text}>{item.name}</Text>
                 <Text style={styles.txt}>{item.city}</Text>
               </View>
-              <BlackArrow style={styles.arrow} />
+              <BlackArrow style={styles.arrow} onPress={handleNavigate}/>
             </View>
           </TouchableOpacity>
         ))}

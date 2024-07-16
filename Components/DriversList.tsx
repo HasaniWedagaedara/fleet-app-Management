@@ -4,14 +4,13 @@ import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import BlackArrow from "@/assets/SVG/BlackArrow";
 import StarYellow from "@/assets/SVG/StarYellow";
 import DriversList from "@/data/Drivers";
-
-
+import { router } from "expo-router";
 
 const Drivers = () => {
   const [drivers, setDrivers] = useState(
     DriversList.map((driver) => ({
       ...driver,
-      color: false, 
+      color: false,
     }))
   );
 
@@ -23,8 +22,12 @@ const Drivers = () => {
     });
   };
 
+  const handleNavigate = () => {
+    router.push("/DriversView");
+  };
+
   return (
-    <View style={[styles.container, ]}>
+    <View style={[styles.container]}>
       <ScrollView contentContainerStyle={{ gap: 10 }}>
         {drivers.map((item, index) => (
           <TouchableOpacity
@@ -44,13 +47,13 @@ const Drivers = () => {
               />
               <View style={styles.column}>
                 <Text style={styles.text}>{item.name}</Text>
-                  <Text style={styles.txt}>{item.city}</Text>
+                <Text style={styles.txt}>{item.city}</Text>
               </View>
               <View style={styles.rate}>
                 <StarYellow style={styles.star} />
                 <Text>{item.rate}</Text>
               </View>
-              <BlackArrow style={styles.arrow} />
+              <BlackArrow style={styles.arrow} onPress={handleNavigate} />
             </View>
           </TouchableOpacity>
         ))}

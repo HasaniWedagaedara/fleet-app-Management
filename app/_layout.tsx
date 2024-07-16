@@ -7,7 +7,9 @@ export default function RootLayout() {
       <Stack.Screen name="(login)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="MapLargeView" options={{ headerShown: false }} />
-      <Stack.Screen name="Spending"  />
+      <Stack.Screen name="Spending" />
+      <Stack.Screen name="DriversView" />
+      <Stack.Screen name="VehiclesView" />
     </Stack>
   );
 }
