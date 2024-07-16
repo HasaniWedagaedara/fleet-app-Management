@@ -6,7 +6,7 @@ import {
   StatusBar,
 } from "react-native";
 import React from "react";
-import { Stack } from "expo-router";
+import { Stack, useNavigation } from "expo-router";
 import CloseSvg from "@/assets/SVG/CloseSvg";
 import CalendarSvg from "@/assets/SVG/CalendarSvg";
 import CallSvg from "@/assets/SVG/CallSvg";
@@ -17,10 +17,12 @@ import StarBarSvg from "@/assets/SVG/StarBarSvg";
 import ProfileDetailRows from "@/Components/ProfileDetailRows";
 
 const HeaderTitle = () => {
+
+  const navigation = useNavigation();
   return (
     <View style={styles.headerContainer}>
       <View style={styles.row}>
-        <CloseSvg style={styles.icon} />
+        <CloseSvg style={styles.icon} onPress={()=>navigation.goBack()}/>
         <Text style={styles.headerText}>Drivers Profile</Text>
         <CalendarSvg style={styles.icon} />
       </View>

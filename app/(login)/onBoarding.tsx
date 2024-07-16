@@ -1,3 +1,5 @@
+import EyeOffSvg from "@/assets/SVG/EyeOffSvg";
+import EyeSvg from "@/assets/SVG/EyeSvg";
 import LoginArrowSvg from "@/assets/SVG/LoginArrowSvg";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
@@ -9,7 +11,9 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import {LinearGradient} from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
+import colors from "@/constants/colors";
 
 const OnBoarding = () => {
   const [email, setEmail] = useState("");
@@ -24,12 +28,13 @@ const OnBoarding = () => {
     </Svg>
   );
 
-
   // Temp Navigate
   const handleLogin = () => {
     // login logic
     router.push("/(tabs)/Home");
   };
+
+  const [isEyeVisible, setIsEyeVisible] = useState(true);
 
   return (
     <View style={styles.container}>
@@ -52,23 +57,37 @@ const OnBoarding = () => {
             keyboardType="email-address"
             autoCapitalize="none"
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={!isPasswordVisible}
-          />
-          
+          <View>
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry={!isPasswordVisible}
+            />
+            <TouchableOpacity onPress={() => setIsEyeVisible(!isEyeVisible)}>
+              <View style={styles.eye}>
+                {isEyeVisible ? <EyeSvg /> : <EyeOffSvg />}
+              </View>
+            </TouchableOpacity>
+          </View>
+
           <Link href="/splash" style={styles.forgot}>
             Forgot Password?
           </Link>
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Log In</Text>
-            <View>
-              <LoginArrowSvg style={styles.arrow} />
-            </View>
-          </TouchableOpacity>
+          <LinearGradient
+            colors={colors.gradientLogin}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.gradient}
+          >
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <Text style={styles.buttonText}>Log In</Text>
+              <View>
+                <LoginArrowSvg style={styles.arrow} />
+              </View>
+            </TouchableOpacity>
+          </LinearGradient>
         </View>
       </View>
       <View style={styles.bottomContainer}>
@@ -82,14 +101,17 @@ const OnBoarding = () => {
 export default OnBoarding;
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-  arrow:{
-    marginTop:-18,
-    marginLeft:80,
+  arrow: {
+    marginTop: -18,
+    marginLeft: 80,
   },
 
   logo2: {
@@ -117,8 +139,8 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     flex: 1,
-    marginTop:270,
-    position:"static"
+    marginTop: 270,
+    position: "static",
   },
   input: {
     height: 60,
@@ -134,7 +156,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     marginTop: 20,
     marginBottom: 20,
-    color:"#429690",
+    color: "#429690",
   },
   button: {
     backgroundColor: "#429690",
@@ -155,7 +177,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 18,
     flexDirection: "row",
-    marginLeft:-40,
+    marginLeft: -40,
   },
 
   icon: {
@@ -170,5 +192,9 @@ const styles = StyleSheet.create({
   svgWrapper: {
     ...StyleSheet.absoluteFillObject,
     zIndex: -1,
+  },
+  eye: {
+    marginLeft: 310,
+    marginTop: -40,
   },
 });

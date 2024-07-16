@@ -58,7 +58,13 @@ const Schedule = () => {
 
       <View style={styles.container}>
         <View>
-          <Calendar />
+          <Calendar
+            theme={{
+              arrowColor: "#848A95",
+              todayBackgroundColor: "#429690",
+              todayTextColor: "#FDFDFD",
+            }}
+          />
         </View>
         <RawDetails
           title="Upcoming Deadlines"

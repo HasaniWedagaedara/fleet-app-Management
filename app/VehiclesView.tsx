@@ -8,20 +8,26 @@ import {
 } from "react-native";
 import React from "react";
 import CloseSvg from "@/assets/SVG/CloseSvg";
-import { Stack } from "expo-router";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Stack, useNavigation } from "expo-router";
+import { GestureHandlerRootView, ScrollView } from "react-native-gesture-handler";
 import VehicleDetailsTabs from "@/Components/VehicleDetailsTabs";
 import KMSvg from "@/assets/SVG/KMSvg";
 import Map from "@/Components/MapDesign";
 import OilFillSvg from "@/assets/SVG/OilFillSvg";
 import IndicatorSvg from "@/assets/SVG/IndicatorSvg";
 import EarnSvg from "@/assets/SVG/EarnSvg";
+import TravelDetails from "@/data/TravelDetails";
+import VehicleDetails from "@/data/VehicleDetails";
+
+
 
 const HeaderTitle = () => {
+
+  const navigation = useNavigation();
   return (
     <View style={styles.headerContainer}>
       <View style={styles.row}>
-        <CloseSvg style={styles.icon} />
+        <CloseSvg style={styles.icon} onPress={()=>navigation.goBack()}/>
         <Text style={styles.headerText}>UKW 3929</Text>
       </View>
     </View>
@@ -50,32 +56,55 @@ const VehiclesView = () => {
       />
       <View style={styles.contentContainer}>
         <View style={styles.container1}>
-          <View style={styles.row2}>
-            <View style={styles.column}>
-              <Text style={styles.text1}>Driver Name</Text>
-              <Text style={styles.text2}> Name</Text>
+          {VehicleDetails.map((item, index) => (
+            <View style={styles.row2} key={index}>
+              <View style={styles.column}>
+                <Text style={styles.text1}>Driver Name</Text>
+                <Text style={styles.text2}>{item.DriverName}</Text>
+              </View>
+              <View style={styles.column}>
+                <Text style={styles.text1}>Vehicle Status</Text>
+                <Text style={styles.text2}> {item.status}</Text>
+              </View>
+              <View style={styles.column}>
+                <Text style={styles.text1}>Vehicle Check</Text>
+                <Text style={styles.text2}> {item.CheckDate}</Text>
+              </View>
             </View>
-            <View style={styles.column}>
-              <Text style={styles.text1}>Vehicle Status</Text>
-              <Text style={styles.text2}> Name</Text>
-            </View>
-            <View style={styles.column}>
-              <Text style={styles.text1}>Vehicle Check</Text>
-              <Text style={styles.text2}> Name</Text>
-            </View>
-          </View>
+          ))}
 
-          <View>
-            <GestureHandlerRootView style={styles.row3}>
-              <VehicleDetailsTabs SvgComponent={KMSvg} text={"KM"} />
-              <VehicleDetailsTabs SvgComponent={OilFillSvg} text={"Diesel"} />
-              <VehicleDetailsTabs
-                SvgComponent={IndicatorSvg}
-                text={"1/100 Km"}
-              />
-              <VehicleDetailsTabs SvgComponent={EarnSvg} text={"Earn"} />
-            </GestureHandlerRootView>
-          </View>
+          {TravelDetails.map((item, index) => (
+            <View key={index}>
+              <GestureHandlerRootView style={styles.row3}>
+                <ScrollView
+                  horizontal
+                  showsVerticalScrollIndicator={false}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <VehicleDetailsTabs
+                    SvgComponent={KMSvg}
+                    text={"KM"}
+                    value={item.kilometers}
+                  />
+                  <VehicleDetailsTabs
+                    SvgComponent={OilFillSvg}
+                    text={"Diesel"}
+                    value={item.DieselVolume}
+                  />
+                  <VehicleDetailsTabs
+                    SvgComponent={IndicatorSvg}
+                    text={"1/100 Km"}
+                    value={item.KilometerRate}
+                  />
+                  <VehicleDetailsTabs
+                    SvgComponent={EarnSvg}
+                    text={"Earn"}
+                    value={item.Earnings}
+                  />
+                </ScrollView>
+              </GestureHandlerRootView>
+            </View>
+          ))}
 
           <View>
             <Text style={styles.text3}>Live GPS</Text>
@@ -140,18 +169,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     color: "#000000",
+    marginLeft:-10,
   },
   text3: {
     fontSize: 18,
     fontWeight: "600",
     color: "#222222",
-    marginLeft:20,
-    marginTop:10,
+    marginLeft: 20,
+    marginTop: 10,
   },
   column: {
     flexDirection: "column",
     marginTop: 30,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
   },
   row2: {
     flexDirection: "row",
@@ -161,5 +191,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: 10,
     marginTop: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

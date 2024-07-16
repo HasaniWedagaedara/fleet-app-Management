@@ -1,24 +1,32 @@
 import { StyleSheet, View, Image } from "react-native";
 import React from "react";
+import colors from "@/constants/colors";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Splash = () => {
-  let backgroundColor = "#2A7C76";
-
-
-
   return (
-    <View style={[styles.container, { backgroundColor }]}>
-      <Image
-        style={styles.logo1}
-        source={require("../../assets/images/logo1.png")}
-      />
-    </View>
+    <LinearGradient
+      colors={colors.gradientColors}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.gradient} 
+    >
+      <View style={styles.container}>
+        <Image
+          style={styles.logo1}
+          source={require("../../assets/images/logo1.png")}
+        />
+      </View>
+    </LinearGradient>
   );
 };
 
 export default Splash;
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1, 
+  },
   container: {
     flex: 1,
     justifyContent: "center",
