@@ -136,6 +136,8 @@ const styles = StyleSheet.create({
   headerText: {
     color: "#fff",
     fontSize: 18,
+    fontFamily: "inter",
+    fontWeight: "600",
   },
   row: {
     flexDirection: "row",
@@ -164,12 +166,14 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "400",
     color: "#666666",
+    fontFamily: "inter",
   },
   text2: {
     fontSize: 16,
     fontWeight: "500",
     color: "#000000",
-    marginLeft:-10,
+    marginLeft: -10,
+    fontFamily: "inter",
   },
   text3: {
     fontSize: 18,
@@ -177,6 +181,7 @@ const styles = StyleSheet.create({
     color: "#222222",
     marginLeft: 20,
     marginTop: 10,
+    fontFamily: "sfPro",
   },
   column: {
     flexDirection: "column",

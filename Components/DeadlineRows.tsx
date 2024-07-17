@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import ArrowSvg from "@/assets/SVG/ArrowSvg"; 
+import ArrowSvg from "@/assets/SVG/ArrowSvg";
 
 interface DeadlineRowsProps {
   title: string;
@@ -33,27 +33,18 @@ const DeadlineRows: React.FC<DeadlineRowsProps> = ({
           <SvgComponent />
           <View style={styles.column}>
             <Text
-              style={[
-                styles.text,
-                { color: color ? "#FFFFFF" : "#000000" }, 
-              ]}
+              style={[styles.text, { color: color ? "#FFFFFF" : "#000000" }]}
             >
               {title}
             </Text>
             <View style={styles.rowDate}>
               <Text
-                style={[
-                  styles.txt,
-                  { color: color ? "#FFFFFF" : "#666666" }, 
-                ]}
+                style={[styles.txt, { color: color ? "#FFFFFF" : "#666666" }]}
               >
                 Due On:
               </Text>
               <Text
-                style={[
-                  styles.txt,
-                  { color: color ? "#FFFFFF" : "#666666" }, 
-                ]}
+                style={[styles.txt, { color: color ? "#FFFFFF" : "#666666" }]}
               >
                 Date
               </Text>
@@ -85,6 +76,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
+    marginBottom: 10,
   },
   column: {
     flexDirection: "column",
@@ -102,11 +94,13 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     marginBottom: 3,
     marginTop: -5,
+    fontFamily: "sfPro",
   },
   txt: {
     fontSize: 13,
     fontWeight: "400",
     marginRight: 5,
+    fontFamily: "sfPro",
   },
   arrow: {
     marginLeft: 120,

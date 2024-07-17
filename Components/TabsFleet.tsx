@@ -25,7 +25,13 @@ const TabsFleet = () => {
             },
           ]}
         >
-          <Text style={{ color: activeTab === "Drivers" ? "#F4F6F6" : "#000" }}>
+          <Text
+            style={{
+              color: activeTab === "Drivers" ? "#F4F6F6" : "#000",
+              fontFamily: "inter",
+              fontWeight: "600",
+            }}
+          >
             Drivers
           </Text>
         </TouchableOpacity>
@@ -40,7 +46,11 @@ const TabsFleet = () => {
           ]}
         >
           <Text
-            style={{ color: activeTab === "Vehicles" ? "#F4F6F6" : "#000" }}
+            style={{
+              color: activeTab === "Vehicles" ? "#F4F6F6" : "#000",
+              fontFamily: "inter",
+              fontWeight: "600",
+            }}
           >
             Vehicles
           </Text>
@@ -48,9 +58,7 @@ const TabsFleet = () => {
       </View>
 
       <View style={styles.content}>
-        {activeTab === "Drivers" ? 
-        <Drivers   /> : 
-        <Vehicles  />}
+        {activeTab === "Drivers" ? <Drivers /> : <Vehicles />}
       </View>
     </View>
   );

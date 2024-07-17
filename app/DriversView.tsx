@@ -12,7 +12,6 @@ import CalendarSvg from "@/assets/SVG/CalendarSvg";
 import CallSvg from "@/assets/SVG/CallSvg";
 import EmailSvg from "@/assets/SVG/EmailSvg";
 import ProfileImage from "@/assets/SVG/ProfileImage";
-import { Icon } from "react-native-vector-icons/Icon";
 import StarBarSvg from "@/assets/SVG/StarBarSvg";
 import ProfileDetailRows from "@/Components/ProfileDetailRows";
 
@@ -87,11 +86,13 @@ const styles = StyleSheet.create({
     width: 400,
     marginLeft: -30,
     marginTop: -40,
-    zIndex:-1,
+    zIndex: -1,
   },
   headerText: {
     color: "#fff",
     fontSize: 18,
+    fontFamily: "inter",
+    fontWeight: "600",
   },
   row: {
     flexDirection: "row",
@@ -102,13 +103,13 @@ const styles = StyleSheet.create({
     marginTop: 7,
   },
   container1: {
-    flex:1,
-    height:1500,
+    flex: 1,
+    height: 1500,
     backgroundColor: "#FFFFFF",
     padding: 10,
     borderRadius: 30,
     zIndex: 5,
-    marginTop:-400,
+    marginTop: -400,
   },
   rowMain: {
     flexDirection: "row",
@@ -121,31 +122,34 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: "#000000",
     fontWeight: "600",
+    fontFamily: "sfPro",
   },
   text2: {
     fontSize: 13,
     color: "#666666",
     fontWeight: "400",
+    fontFamily: "inter",
   },
   text3: {
     fontSize: 13,
     color: "#429690",
     fontWeight: "700",
     margin: 10,
+    fontFamily: "sfPro",
   },
   detailContainer: {
     justifyContent: "center",
     alignItems: "center",
   },
   row2: {
-    top:10,
+    top: 10,
     flexDirection: "row",
     backgroundColor: "#F1F2F4",
-    alignItems:'center',
-    paddingHorizontal:5,
-    borderRadius:19
+    alignItems: "center",
+    paddingHorizontal: 5,
+    borderRadius: 19,
   },
-  details:{
-    marginTop:30,
-  }
+  details: {
+    marginTop: 30,
+  },
 });

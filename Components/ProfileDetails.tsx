@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
     borderRadius: 55,
     top: 30,
-    padding:10,
-    
+    padding: 10,
   },
   touchable: {
     padding: 10,
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
   column: {
     flexDirection: "column",
     marginLeft: 5,
-    flex:1,
+    flex: 1,
   },
   dueDate: {
     marginLeft: 10,
@@ -78,9 +77,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "600",
     marginBottom: 3,
     marginTop: -5,
+    fontFamily: "inter",
   },
   txt: {
     fontSize: 13,

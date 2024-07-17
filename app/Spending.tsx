@@ -98,6 +98,8 @@ const styles = StyleSheet.create({
     color: colors.primary,
     marginTop: 40,
     marginLeft: 75,
+    fontFamily: "sfPro",
+    fontWeight: "600",
   },
   headerLeft: {
     marginLeft: 20,
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
   row1: {
     flexDirection: "row",
     alignItems: "center",
-    top:20,
+    top: 20,
   },
   txt: {
     flexDirection: "row",
@@ -126,6 +128,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginLeft: 20,
     flexDirection: "row",
+    fontFamily: "sfPro",
   },
   titleRow: {
     flexDirection: "row",
@@ -134,17 +137,17 @@ const styles = StyleSheet.create({
   },
   icon: {
     flexDirection: "row",
-    marginTop:50,
-    marginLeft:170,
+    marginTop: 50,
+    marginLeft: 170,
   },
   list: {
     marginTop: 20,
   },
-  chart:{
-    top:-100,
-    height:400,
-    marginLeft:10,
-  }
+  chart: {
+    top: -100,
+    height: 400,
+    marginLeft: 10,
+  },
 });
 
 const Row = () => {

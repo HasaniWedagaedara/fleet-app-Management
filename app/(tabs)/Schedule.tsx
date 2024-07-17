@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     color: "#ffff",
     fontWeight: "600",
     marginTop: 72,
+    fontFamily: "inter",
   },
 
   headerRight: {

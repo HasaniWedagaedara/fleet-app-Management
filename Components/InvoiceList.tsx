@@ -87,17 +87,21 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     marginBottom: 3,
     marginTop: -5,
+    fontFamily: "sfPro",
   },
   txt: {
     fontSize: 13,
     fontWeight: "400",
     marginRight: 5,
+    fontFamily: "sfPro",
   },
   cash: {
     flexDirection: "row",
     color: "#F95B51",
     position: "absolute",
     right: 10,
+    fontFamily: "sfPro",
+    fontWeight: "600",
   },
 });
 

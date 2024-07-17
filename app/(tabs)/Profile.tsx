@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
     top: 50,
     borderRadius: 30,
     zIndex: 2,
-    margin:10,
-    
+    margin: 10,
   },
   headerTitle: {
     fontSize: 18,
     color: "#ffff",
     fontWeight: "600",
     top: 100,
+    fontFamily: "inter",
   },
   headerRight: {
     marginRight: 20,
@@ -131,11 +131,13 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#ffffff",
     top: 140,
+    fontFamily: "inter",
   },
   address: {
     fontSize: 14,
     fontWeight: "600",
     top: 150,
     color: "#F2F2F2",
+    fontFamily: "inter",
   },
 });

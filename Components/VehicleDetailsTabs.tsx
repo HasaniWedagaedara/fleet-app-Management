@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     color: "#438883",
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: "inter",
   },
   text2: {
     fontSize: 12,
@@ -50,5 +51,6 @@ const styles = StyleSheet.create({
     color: "#96C9C5",
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: "inter",
   },
 });

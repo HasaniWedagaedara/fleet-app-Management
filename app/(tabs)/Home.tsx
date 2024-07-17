@@ -27,11 +27,21 @@ const HeaderTitle = () => {
           fontSize: 14,
           color: colors.primary,
           marginTop: 35,
+          fontFamily: "sfPro",
+          fontWeight: "500",
         }}
       >
         Welcome!
       </Text>
-      <Text style={{ fontSize: 20, color: "#29756F", marginLeft: -10 }}>
+      <Text
+        style={{
+          fontSize: 20,
+          color: "#29756F",
+          marginLeft: -10,
+          fontFamily: "sfPro",
+          fontWeight: "500",
+        }}
+      >
         Name
       </Text>
     </View>

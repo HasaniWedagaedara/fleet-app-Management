@@ -11,7 +11,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import {LinearGradient} from "expo-linear-gradient";
+import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
 import colors from "@/constants/colors";
 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   arrow: {
-    marginTop: -18,
+    marginTop: -20,
     marginLeft: 80,
   },
 
@@ -123,11 +123,14 @@ const styles = StyleSheet.create({
   welcome: {
     marginTop: 10,
     fontSize: 40,
+    fontFamily: "sfPro",
     fontWeight: "700",
   },
   text: {
     fontSize: 16,
     marginBottom: 20,
+    fontFamily: "sfPro",
+    fontWeight: "500",
   },
   topContainer: {
     flex: 3,
@@ -151,12 +154,16 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingHorizontal: 8,
     backgroundColor: "#fff",
+    fontFamily: "sfPro",
+    fontWeight: "500",
   },
   forgot: {
     alignSelf: "flex-end",
     marginTop: 20,
     marginBottom: 20,
     color: "#429690",
+    fontFamily: "sfPro",
+    fontWeight: "500",
   },
   button: {
     backgroundColor: "#429690",
@@ -174,10 +181,11 @@ const styles = StyleSheet.create({
   buttonText: {
     paddingTop: 8,
     color: "#fff",
-    fontWeight: "700",
     fontSize: 18,
     flexDirection: "row",
     marginLeft: -40,
+    fontFamily: "sfPro",
+    fontWeight: "600",
   },
 
   icon: {
@@ -188,6 +196,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "700",
     textAlign: "center",
+    fontFamily: "inter",
   },
   svgWrapper: {
     ...StyleSheet.absoluteFillObject,

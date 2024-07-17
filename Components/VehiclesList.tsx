@@ -84,11 +84,13 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     marginBottom: 3,
     marginTop: -5,
+    fontFamily: "sfPro",
   },
   txt: {
     fontSize: 13,
     fontWeight: "400",
     marginRight: 5,
+    fontFamily: "inter",
   },
   arrow: {
     right: 10,

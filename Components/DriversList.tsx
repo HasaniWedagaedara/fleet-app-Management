@@ -51,7 +51,7 @@ const Drivers = () => {
               </View>
               <View style={styles.rate}>
                 <StarYellow style={styles.star} />
-                <Text>{item.rate}</Text>
+                <Text style={styles.rateText}>{item.rate}</Text>
               </View>
               <BlackArrow style={styles.arrow} onPress={handleNavigate} />
             </View>
@@ -90,11 +90,13 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     marginBottom: 3,
     marginTop: -5,
+    fontFamily: "sfPro",
   },
   txt: {
     fontSize: 13,
     fontWeight: "400",
     marginRight: 5,
+    fontFamily: "inter",
   },
   arrow: {
     right: 10,
@@ -110,6 +112,11 @@ const styles = StyleSheet.create({
   star: {
     marginRight: 5,
     marginTop: 5,
+  },
+  rateText: {
+    fontFamily: "sfPro",
+    fontWeight: "400",
+    fontSize:13
   },
 });
 

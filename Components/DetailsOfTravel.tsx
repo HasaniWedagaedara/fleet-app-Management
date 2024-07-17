@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     width: 380,
     height: 160,
     borderRadius: 15,
-    
   },
   row: {
     flexDirection: "row",
@@ -66,29 +65,32 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 16,
     fontWeight: "600",
+    fontFamily: "sfPro",
   },
   row1: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
   },
   row1Text: {
     marginLeft: 5,
     color: "#999999",
+    fontFamily: "sfPro",
+    fontWeight: "500",
   },
   row2: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
+    marginTop: -5,
   },
   row2Text: {
     marginLeft: 5,
     color: "#999999",
+    fontFamily: "sfPro",
+    fontWeight: "400",
   },
   row3: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
   },
   row3Item1: {
     flexDirection: "row",
@@ -111,9 +113,13 @@ const styles = StyleSheet.create({
   row3Text1: {
     marginLeft: 5,
     color: "#000000",
+    fontFamily: "sfPro",
+    fontWeight: "700",
   },
   row3Text2: {
     marginLeft: 5,
     color: "#FFFFFF",
+    fontFamily: "sfPro",
+    fontWeight: "700",
   },
 });

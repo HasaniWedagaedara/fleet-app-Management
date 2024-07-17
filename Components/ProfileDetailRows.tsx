@@ -45,11 +45,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     color: "#323334",
+    fontFamily: "sfPro",
   },
   text2: {
     fontSize: 11,
     fontWeight: "500",
     color: "#7A7F85",
+    fontFamily: "sfPro",
   },
   text3: {
     fontSize: 12,
@@ -61,12 +63,14 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginLeft: 10,
     margin: -4,
+    fontFamily: "sfPro",
   },
   text4: {
     fontSize: 13,
     fontWeight: "400",
     color: "#323334",
-    paddingHorizontal:10
+    paddingHorizontal: 10,
+    fontFamily: "sfPro",
   },
   column: {
     flex: 1,
@@ -76,6 +80,6 @@ const styles = StyleSheet.create({
   },
   shareIcon: {
     left: 330,
-    bottom:10,
+    bottom: 10,
   },
 });

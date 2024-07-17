@@ -24,7 +24,7 @@ const TabsBar = () => {
           onPress={() => handleSelectCategory(index)}
           style={activeIndex === index ? styles.active : styles.item}
         >
-          <Text style={{ color: activeIndex === index ? "#fff" : "#666666" }}>
+          <Text style={{ color: activeIndex === index ? "#fff" : "#666666",fontFamily:'sfPro',fontWeight:"400" }}>
             {item.title}
           </Text>
         </TouchableOpacity>

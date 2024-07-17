@@ -1,6 +1,6 @@
 import { Link } from "@react-navigation/native";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 
 interface RawDetailsProps {
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 55,
     color: "#666666",
+    fontFamily: "sfPro",
+    fontWeight: "400",
   },
   headerTxt: {
     fontSize: 18,
@@ -43,6 +45,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginLeft: 20,
     flexDirection: "row",
+    fontFamily: "sfPro",
   },
 });
 
